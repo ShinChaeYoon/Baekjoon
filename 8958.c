@@ -1,16 +1,21 @@
 #include <stdio.h>
 int main(){
-    int N;
-    int count = 0;
-    char str[80] = {0};
-    int j = 0;
-    scanf("%d", &N);
-    for(int i=0; i<N; i++) {
-        scanf("%s\n", str);
-        while (str[j]!='\0'){
-            if (str[j]=='O') count += 1;
-            j+=1;
+    int t,ans;
+    char s[80];
+    scanf("%d", &t);
+    while (t--){
+        scanf("%s", s);
+        int cnt = 0;
+        ans = 0;
+        for(int i=0; s[i] != '\0'; i++){
+            if(s[i] == 'O'){
+                cnt ++;
+                ans += cnt;
+            }
+            else{
+                cnt = 0;
+            }
         }
-        printf("%d\n", count);
+        printf("%d\n", ans);
     }
 }
